@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Timer App</title>
+</head>
+<center>
+<body>
+    
+    <h1>Welcome, {{ username }}!</h1>
+    <h2>Dashboard</h2>
+
+    <form method="post" action="{{ url_for('dashboard', username=username) }}">
+        <button type="submit" name="action" value="morning_login">Log Morning</button>
+        {% if user_data and user_data[6] %}
+            <p>Morning Login Time: {{ user_data[6] }}</p>
+        {% endif %}
+    </form>
+
+    <form method="post" action="{{ url_for('dashboard', username=username) }}">
+        <button type="submit" name="action" value="lunch_logout">Log Lunch Logout</button>
+        {% if user_data and user_data[7] %}
+            <p>Lunch Logout Time: {{ user_data[7] }}</p>
+        {% endif %}
+    </form>
+
+    <form method="post" action="{{ url_for('dashboard', username=username) }}">
+        <button type="submit" name="action" value="lunch_login">Log Lunch Login</button>
+        {% if user_data and user_data[8] %}
+            <p>Lunch Login Time: {{ user_data[8] }}</p>
+        {% endif %}
+    </form>
+
+    <form method="post" action="{{ url_for('dashboard', username=username) }}">
+        <button type="submit" name="action" value="evening_logout">Log Evening Logout</button>
+        {% if user_data and user_data[9] %}
+            <p>Evening Logout Time: {{ user_data[9] }}</p>
+        {% endif %}
+    </form>
+
+    <form method="get" action="{{ url_for('login') }}">
+        <button type="submit">Logout</button>
+    </form>
+
+</body></center>
+</html>
