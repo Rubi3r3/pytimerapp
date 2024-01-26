@@ -84,7 +84,6 @@ def dashboard(username):
             conn.commit()
             message = f"Successfully logged {action.replace('_', ' ')} today at {timestamp}."
 
-
     cursor.execute('SELECT * FROM users WHERE username=?', (username,))
     user_data = cursor.fetchone()
     conn.close()
