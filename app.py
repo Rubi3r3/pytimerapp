@@ -12,7 +12,7 @@ cursor.execute('''
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         username TEXT NOT NULL,
         user_pin INTEGER,
-        password TEXT NOT NULL,
+        password TEXT,
         first_name TEXT,
         last_name TEXT,
         morning_login DATETIME,
